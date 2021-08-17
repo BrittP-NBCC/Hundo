@@ -26,9 +26,7 @@
     <div class="container-fluid">
         <!--Logo-->
         <a class="navbar-brand" href="index.html" title="AppName">
-            <!--<img src="/img/logo.png" width="60" alt="Logo" class="d-inline">-->
-            <span class="b-circle ms-4">B</span>
-            <span class="logo ms-3">APP_NAME</span>
+            <img src="/img/hundo.small.png" width="90" alt="Logo" class="d-inline ms-3">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,9 +49,48 @@
     </nav>
 
     <!--Main-->
-    <main class="flex-shrink-0">
+    <main class="flex-shrink-0 mt-5">
        <div class="container">
-
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col col-lg-4 side-border">
+                    <h1>HUNDO: A Coding Project</h1>
+                    <h4 class="lead">
+                        Live life one loop at a time. A Javascript exercise using loops. Write a
+                        program that displays the numbers from 0 to 100. Display the even numbers in 
+                        <strong>BOLD.</strong>
+                    </h4>
+                    <h2 class="mt-5 border-bottom border-2">
+                        Instructions
+                    </h2>
+                    <p>Enter a starting value and an ending value. Press the button and the values will appear.</p>
+                </div>
+                <div class="col col-lg-8">
+                    <div>
+                        <h5>Enter Values</h5>
+                        <form class="row gy-2 gx-3">
+                            <div class="col">
+                                <input id="startValue" type="number" class="form-control" aria-label="Start Value" 
+                                placeholder="Start Value" value="0">
+                            </div>
+                            <div class="col">
+                                <input id="endValue" type="number" class="form-control" aria-label="End Value" 
+                                placeholder="End Value" value="100">
+                            </div>
+                            <div class="col-12">
+                                <button id="btnSubmit" type="button" class="btn mt-2">Show the HUNDO</button>
+                            </div>
+                        </form>
+                        <h2 class="mt-5 border-bottom border-2">Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <tbody id="results">
+                                    <!--Results Go Here-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
        </div>
     </main>
 
@@ -67,14 +104,17 @@
                 </div>
                 <!--Logo-->
                 <div class="col justify-content-center">
-                    <img src="img/logo-navy.png" alt="logo" width="150px" class="img-fluid">
+                    <a href="https://brittanyj-portfolio.netlify.app/" target="_blank">
+                        <img src="img/logo-small.png" alt="logo" width="50px" class="img-fluid hover">
+                    </a>
+                    
                 </div>
                 <!--Social Links-->
                 <div class="col d-flex justify-content-center">
                     <div class="row">
                         <!--Github-->
                         <div class="col">
-                            <a href="https://github.com/BrittP-NBCC" target="_blank">
+                            <a href="https://github.com/BrittP-NBCC/Hundo" target="_blank">
                                 <span class="icon">
                                   <i class="fab fa-github-alt" title="Github"></i>
                                 </span>
