@@ -127,9 +127,41 @@
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello world is a function that displays an alert with a message of "hello world"</p>
+                    <p>The Code is structured in four functions to facilitate use of the <strong>Model View Controller (MVC)</strong>.</p>
+                    <h5>$</h5>
+                    <p>This function will save you time allowing you to pass in the id you 
+                        want to target with document.getElementById("") and it will return it 
+                        within the quotes allowing for shorthand down the line 
+                    </p>
+                    <h5>getValues</h5>
+                    <p>
+                        The <strong>getValues</strong> function starts by getting the values from the inputs on the app.html page.
+                        You can see we use the <strong>'$'</strong> function and pass in the <strong>ids</strong> of the specific inputs 
+                        that we are targeting. <br>Once we have the inputs stored as values, we then check to see if the 
+                        values can be stored as integers. If the value cannot be converted to an integer, 
+                        the value will be changed to <strong>'NaN'</strong> here (not a number). <br>Once we have attempted to parse our data, we must
+                        validate that the inputs are integers because we do not want to store multiple data types into our <strong>numbers</strong> array. <br><strong>Number.isInteger</strong> will return 'true' so long as
+                        the value passed in is an int. If <strong>BOTH</strong> the values
+                        return true, then we will call our <strong>generateNumbers</strong> and <strong>displayNumbers</strong> functions and pass in the validated data we collected.
+                        If either return false, we will display an alert notifying the user to enter valid data.
+                        It is also important to note that this is the function that is called on our <strong>buttons "click" event</strong>.
+                    </p>
+                    <h5>generateNumbers</h5>
+                    <p>
+                        The <strong>generateNumbers</strong> function takes in the validated data as parameters and returns a <strong>list</strong> of all the numbers between the two values the user selected. 
+                        First, we initialize our array by setting it = []. We then use a <strong>for loop</strong> to gather each number one at a time between our two values: <strong>sValue</strong> and <strong>eValue</strong>. 
+                        We create a variable named <strong>index</strong> and set it to the starting value <strong>sValue.</strong> The loop will continue on so long as the index is less than or equal to the end value we passed in.
+                        we then increment the index by 1 using <strong>index++</strong> so we dont create an infinite loop. Every time we get inside the loop code block, we are adding the index to our numbers array using <strong>numbers.push(index);</strong>.
+                        Once we reach the final number, we will return our complete array which is then called in <strong>getValues.</strong>
+                    </p>
+                    <h5>displayNumbers</h5>
+                    <p>
+                        In this function, we will take in an array as a parameter and loop through each number in our <strong>numbers array</strong> and create a <strong>string of HTML code</strong> that we will insert into our table. We start by declaring <strong>templateRows</strong> as a string outside of our 
+                        loops code block to give it the correct <strong>scope</strong>. Then, we will create a <strong>for loop</strong> looping through the <strong>numbers array</strong> we passed in that will continue until we reach the <strong>.length</strong> of the array.
+                        For every number within our numbers array, we will check to see if it is an even number through use of the <strong>modulus operator</strong>; which returns the remainder for division by 2, and change a variable called <strong>className</strong> accordingly.
+                        Every time we loop through, we will be <strong>concatinating</strong> to our templateRows string the className and number.
+                        After we have completed our string, we exit the loop and target the inside of the <strong>results id with .innerHTML</strong> and form our table.
+                    </p>
                 </div>
             </div>
        </div>
