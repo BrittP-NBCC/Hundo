@@ -26,8 +26,8 @@
     <nav class="navbar navbar-expand-md pt-4 pb-3 fixed-top navbar-dark">
     <div class="container-fluid">
         <!--Logo-->
-        <a class="navbar-brand" href="index.html" title="AppName">
-            <img src="/img/hundo.small.png" width="100" alt="Logo" class="d-inline ms-3">
+        <a class="navbar-brand" href="index.html" title="HUNDO">
+            <img src="/img/hundo.small.png" width="100" alt="Logo" class="hover d-inline ms-3">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,9 +57,71 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            //Call Hello World
-                            function HelloWorld(){
-                                alert("hello world");
+                            //shorthand for getting elements
+                            let $ = function(id) { 
+                                return document.getElementById(id); 
+                            };
+                            
+                            //get the values from the interface
+                            //starts or controller function
+                            function getValues(){
+                                //get values from the page
+                                let startValue = $('startValue').value;
+                                let endValue = $('endValue').value;
+                            
+                                //attempt to parse values into ints
+                                startValue = parseInt(startValue);
+                                endValue = parseInt(endValue);
+                            
+                                //validation that input is an int
+                                if(Number.isInteger(startValue) && Number.isInteger(endValue)){
+                                    //call generateNumbers
+                                    let numbers = generateNumbers(startValue, endValue);
+                                    
+                                    //call displayNumbers
+                                    displayNumbers(numbers);
+                                }
+                                else alert("You must enter a number.")
+                            }
+                            
+                            //generate numbers from startvalue to the endvalue
+                            //logic function(s)
+                            function generateNumbers(sValue, eValue){
+                            
+                                let numbers = [];
+                            
+                                //we want to get all numbers from start to end
+                                for(let index = sValue; index <= eValue; index++){
+                                    //this will execute in a loop until index = eValue
+                                    numbers.push(index);
+                                } 
+                                return numbers;
+                            }
+                            
+                            //display numbers with even numbers in bold
+                            //display or view function
+                            function displayNumbers(numbers){
+                            
+                                let templateRows = "";
+                            
+                                for (let index = 0; index < numbers.length; index++) {
+                            
+                                    let className = "even";
+                                    let number = numbers[index];
+                            
+                                    //checking to see if the remainder of the number is equal to 0. 
+                                    if(number % 2 == 0){
+                                        className = "even";
+                                    }
+                                    else {
+                                        className = "odd";
+                                    }
+                                    
+                                    //creates rows in table
+                                    templateRows += `&lt;tr>&lt;td class="${className}" >${number}&lt;/td>&lt;/tr>
+                                }
+                            
+                                $('results').innerHTML = templateRows;
                             }
                         </code>
                     </pre>

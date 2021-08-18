@@ -7,7 +7,7 @@
     --navy: #0a192f;
     --light-navy: #112240;
     --lightest-navy: #544023;
-    --navy-shadow: rgba(27, 20, 2, 0.7);
+    --navy-shadow: rgba(53, 45, 43, 0.753);
     --dark-slate: #706449;
     --slate: #b0a388;
     --light-slate: #d1c3a8;
@@ -182,15 +182,43 @@ a:hover {
     background-color: var(--white);
   }
 
-/* Footer */
-footer {
-    background-color: var(--dark-navy);
-    color: var(--slate) !important;
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-  .side-border{
-    border-right: solid 2px white;
+  input:focus {
+    box-shadow: none !important;
   }
-}
+
+  .btn:focus {
+    box-shadow: none !important;
+  }
+
+  /* Table */
+  table, th, td {
+    border: 1px solid var(--dark-navy);
+    color: var(--green);
+    font-size: 1.1em;
+    font-weight: 200;
+  }
+
+  tr:nth-child(odd) {
+    background-color: var(--dark-navy);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--navy-shadow);
+  }
+
+  .even {
+    font-weight: 800;
+  }
+
+  /* Footer */
+  footer {
+      background-color: var(--dark-navy);
+      color: var(--slate) !important;
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px) {
+    .side-border{
+      border-right: solid 2px white;
+    }
+  }
